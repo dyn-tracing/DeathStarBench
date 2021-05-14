@@ -25,16 +25,16 @@ spec:
       labels:
         io.kompose.service: user
     spec:
-      nodeName: r08
       containers:
         - command:
             - user
-          image: salehsedghpour/hotel_reserv_user_single_node
+          image: gcr.io/dynamic-tracing/hotel_reserv_user_single_node
           name: hotel-reserv-user
           ports:
             - containerPort: 8086
           resources:
-            limits:
-              cpu: 1000m
+            requests:
+              memory: "2200Mi"
+              cpu: "601m"
       restartPolicy: Always
 status: {}
