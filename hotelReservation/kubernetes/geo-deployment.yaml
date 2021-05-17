@@ -25,16 +25,16 @@ spec:
       labels:
         io.kompose.service: geo
     spec:
-      nodeName: r08
       containers:
         - command:
             - geo
-          image: salehsedghpour/hotel_reserv_geo_single_node
+          image: gcr.io/dynamic-tracing/hotel_reserv_geo_single_node
           name: hotel-reserv-geo
           ports:
             - containerPort: 8083
           resources:
-            limits:
-              cpu: 1000m
+            requests:                                                           
+              memory: "2200Mi"                                                  
+              cpu: "601m"  
       restartPolicy: Always
 status: {}
